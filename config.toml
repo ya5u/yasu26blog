@@ -1,0 +1,20 @@
+baseURL = "http://localhost"
+languageCode = "ja"
+title = "YASU26.TECH"
+theme = "bare"
+
+[params]
+mainSections = ["posts"]
+author = "YASU26.TECH"
+email = "shinzaki@yasu26.tech"
+description = "Go とか Kubernetes とかクラウドとか"
+hero_colour = "dark"
+disableAttribution = true
+
+[[params.social]]
+icon = "github"
+url = "https://github.com/ya5u/"
+
+[[params.social]]
+icon = "linkedin"
+url = "https://linkedin.com/in/yasutaka-shinzaki-7971a65b"
