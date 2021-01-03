@@ -109,6 +109,24 @@ $ groups <user name>
 <user name> : <user name> adm dialout cdrom floppy sudo audio dip video plugdev netdev lxd ubuntu
 ```
 
+**SSHまわりの設定**
+
+Ubuntu では ssh はデフォルトで有効になっているので Raspberry Pi OS のように有効化する手順は不要です
+
+このあとパスワード認証を不可にするので秘密鍵と公開鍵を生成して ~/.ssh/authorized_keys に追加しておきます  
+そして /etc/ssh/sshd_config を以下のように編集します
+
+* `PasswordAuthentication` を `no` に変更
+* `PermitEmptyPasswords` を `no` に変更
+* `PermitRootLogin` を `no` に変更
+* `Port` を 22 以外の未使用のポート番号に変更
+
+その後以下を実行して設定を反映させます
+
+```bash
+$ sudo /etc/init.d/ssh restart
+```
+
 #### 参考ポスト
 
 今回も先人たちの叡智にお世話になりました
