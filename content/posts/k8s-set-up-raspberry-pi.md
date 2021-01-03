@@ -127,6 +127,21 @@ Ubuntu では ssh はデフォルトで有効になっているので Raspberry 
 $ sudo /etc/init.d/ssh restart
 ```
 
+このあたりで鍵認証で ssh できるかどうか確認しておきましょう  
+万一これがうまくいっていないとラズパイ本体に直接ディスプレイとキーボードつなぐなどして設定変更するしか手がなくなってしまいます…
+
+**ubuntu ユーザーを削除**
+
+```bash
+$ sudo userdel -r ubuntu
+userdel: group ubuntu not removed because it has other members.
+userdel: ubuntu mail spool (/var/mail/ubuntu) not found
+
+# 確認
+$ id -a ubuntu
+id: ‘ubuntu’: no such user
+```
+
 #### 参考ポスト
 
 今回も先人たちの叡智にお世話になりました
