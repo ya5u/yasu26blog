@@ -142,6 +142,43 @@ $ id -a ubuntu
 id: ‘ubuntu’: no such user
 ```
 
+**IP 固定化**
+
+Ubuntu での IP 固定は /etc/netplan/50-cloud-init.yaml を以下のように編集して設定します
+
+```
+# This file is generated from information provided by the datasource.  Changes
+# to it will not persist across an instance reboot.  To disable cloud-init's
+# network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+network:
+    ethernets:
+        eth0:
+            addresses:
+            - <NodeごとのIP>/24
+            dhcp4: false
+            gateway4: <ルーターのIP>
+            nameservers:
+                addresses:
+                - <ルーターのIP>
+    version: 2
+```
+
+**ホスト名変更**
+
+```bash
+$ sudo hostnamectl set-hostname <Nodeのホスト名>
+```
+
+他の Node のホスト名も教えるには /etc/hosts に以下のように追記します
+
+```
+127.0.0.1        <自分のホスト名>
+<各NodeのIP>     <各Nodeのホスト名>
+...
+```
+
 #### 参考ポスト
 
 今回も先人たちの叡智にお世話になりました
