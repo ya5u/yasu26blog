@@ -1,13 +1,13 @@
 ---
 title: "Raspberry Pi 4 に Ubuntu 20.10 を入れてセットアップする"
-date: 2020-01-03T08:25:05+09:00
-draft: true
+date: 2020-01-06T08:25:05+09:00
+draft: false
 tags:
 - Kubernetes
 - Raspberry Pi
 ---
 
-[Raspberry Pi 4 でつくる ”おうち Kubernetes Cluster” シリーズ](/k8s-create-cluster) の OS セットアップ編です
+[Raspberry Pi 4 でつくる ”おうち Kubernetes Cluster” シリーズ](/posts/k8s-create-cluster) の OS セットアップ編です
 
 ## OS インストール
 
@@ -17,15 +17,17 @@ tags:
 
 Imager を開くと
 
-
+![rpi_imager_home](/rpi_imager_home.png)
 
 こんな感じで OS と SD カードが選択できるようになっています
 
 Ubuntu から
 
-
+![rpi_imager_os_selection](/rpi_imager_os_selection.png)
 
 `Ubuntu Server 20.10 (RPi 3/4/400)` を選択します
+
+![rpi_imager_ubuntu_selection](/rpi_imager_ubuntu_selection.png)
 
 あとは SD カードを選択して `WRITE` を押すと書き込みが始まるので完了するのを待ちます  
 コマンドを叩かなくても GUI で簡単にイメージをやけるのは本当にありがたいです
@@ -179,9 +181,13 @@ $ sudo hostnamectl set-hostname <Nodeのホスト名>
 ...
 ```
 
+初期設定としてはここまでです  
+お疲れさまでした🎊
+
 #### 参考ポスト
 
 今回も先人たちの叡智にお世話になりました
 
 * [5ステップで完了！ラズベリーパイ(B+)のセキュリティ設定まとめ！](http://masatolan.com/raspberry-pi/raspberry-pi-security/)
 * [ラズパイでやらなければいけない４つのセキュリティ対策！](https://qiita.com/nokonoko_1203/items/94a888444d5019f23a11)
+* [[Ubuntu]ローカルIPアドレスを固定にする(18.04/16.04)](https://jyn.jp/ubuntu-localip-static/)

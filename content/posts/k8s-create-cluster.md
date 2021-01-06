@@ -20,7 +20,7 @@ tags:
 時代の波に乗って、早速我が家でも ”おうち Kubernetes Cluster” を構築していきたいと思います。
 
 1. 物理編（作成中）
-1. OS セットアップ編（作成中）
+1. OS セットアップ編 → [Raspberry Pi 4 に Ubuntu 20.10 を入れてセットアップする](/posts/k8s-set-up-raspberry-pi)
 1. Kubernetes Cluster 構築編（作成中）
 
 ### Kubernetes でのオペレーション関連
